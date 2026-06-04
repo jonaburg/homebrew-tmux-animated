@@ -25,6 +25,10 @@ class TmuxAnimated < Formula
            "--enable-utf8proc",
            "--program-suffix=-animated"
     system "make", "install"
+
+    # tmux's Makefile installs the man page with a hard-coded name; rename
+    # so it doesn't collide with a parallel `tmux` formula's man page.
+    mv man1/"tmux.1", man1/"tmux-animated.1" if (man1/"tmux.1").exist?
   end
 
   test do
