@@ -22,6 +22,7 @@ class TmuxAnimated < Formula
            "--disable-silent-rules",
            "--prefix=#{prefix}",
            "--sysconfdir=#{etc}",
+           "--enable-utf8proc",
            "--program-suffix=-animated"
     system "make", "install"
   end
